@@ -36,8 +36,7 @@ public class ItemController {
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
     
-    @DeleteMapping
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     ResponseEntity<Item> delete(Integer id){
         itemService.deleteById(id);
         return new ResponseEntity(HttpStatus.OK);
