@@ -29,7 +29,7 @@ public class UserService {
         return userDAO.findById(id).get();
     }
 
-    public void delete(User user){
-        userDAO.delete(user);
+    public void deleteById(Integer id){
+        userDAO.deleteById(id);
     }
 }

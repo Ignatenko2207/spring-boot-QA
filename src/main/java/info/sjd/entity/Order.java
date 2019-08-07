@@ -28,4 +28,10 @@ public class Order {
 	
 	@ManyToOne(targetEntity = Cart.class)
 	private Cart cart;
+
+	public Order(Item item, Integer amount, Cart cart) {
+		this.item = item;
+		this.amount = amount;
+		this.cart = cart;
+	}
 }

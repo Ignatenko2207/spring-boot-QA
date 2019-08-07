@@ -38,4 +38,12 @@ public class User {
 	@Column(name = "profile")
 	private Profile profile;
 
+	public User(String login, String password, String email, String firstName, String lastName, Profile profile) {
+		this.login = login;
+		this.password = password;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.profile = profile;
+	}
 }

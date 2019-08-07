@@ -32,4 +32,10 @@ public class Item {
 	@Column(name = "init_price")
 	private Integer initPrice;
 
+	public Item(String article, String name, Integer price, Integer initPrice) {
+		this.article = article;
+		this.name = name;
+		this.price = price;
+		this.initPrice = initPrice;
+	}
 }

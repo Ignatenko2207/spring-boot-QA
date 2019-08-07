@@ -28,4 +28,10 @@ public class Cart {
 	
 	@Column(name = "status")
 	private Status status;
+
+	public Cart(Long time, User user, Status status) {
+		this.time = time;
+		this.user = user;
+		this.status = status;
+	}
 }
