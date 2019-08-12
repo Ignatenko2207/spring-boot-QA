@@ -2,12 +2,12 @@ package info.sjd.dao;
 
 import info.sjd.ApplicationRunner;
 import info.sjd.entity.*;
-import info.sjd.service.UserService;
-import org.junit.jupiter.api.*;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(SpringRunner.class)
+@SpringJUnitConfig(ApplicationRunner.class)
 @SpringBootTest
 class OrderDAOTest {
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -14,21 +15,25 @@ public class UserService {
     UserDAO userDAO;
 
     public User save(User user){
-        if (userDAO.findById(user.getId()) == null){
+        if (user.getId() == null || userDAO.findById(user.getId()) == null){
             return userDAO.save(user);
         }
         return null;
     }
 
     public User update(User user){
-        if (userDAO.findById(user.getId()) != null){
+        if (user.getId() != null && userDAO.findById(user.getId()) != null){
             return userDAO.save(user);
         }
         return null;
     }
 
     public User findById(Integer id){
-        return userDAO.findById(id).get();
+        Optional<User> user = userDAO.findById(id);
+        if (user.isPresent()){
+            return user.get();
+        }
+        return null;
     }
 
     public List<User> findAll(){

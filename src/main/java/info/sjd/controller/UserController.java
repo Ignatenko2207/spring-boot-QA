@@ -2,6 +2,7 @@ package info.sjd.controller;
 
 import info.sjd.entity.User;
 import info.sjd.service.UserService;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ public class UserController {
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
+    @ApiParam("test id description")
     @GetMapping("/find/{id}")
     ResponseEntity<User> findById(@PathVariable Integer id){
         return new ResponseEntity(userService.findById(id), HttpStatus.OK);
