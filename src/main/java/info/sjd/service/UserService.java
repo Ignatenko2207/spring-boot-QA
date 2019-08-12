@@ -5,6 +5,8 @@ import info.sjd.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -27,6 +29,10 @@ public class UserService {
 
     public User findById(Integer id){
         return userDAO.findById(id).get();
+    }
+
+    public List<User> findAll(){
+        return userDAO.findAll();
     }
 
     public void deleteById(Integer id){

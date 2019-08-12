@@ -28,6 +28,12 @@ public class UserController {
         return new ResponseEntity(userService.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping("/find")
+    ResponseEntity<User> findAll(){
+        return new ResponseEntity(userService.findAll(), HttpStatus.OK);
+    }
+
+
     @PutMapping
     ResponseEntity<User> update(@RequestBody User user){
         User savedUser = userService.update(user);
